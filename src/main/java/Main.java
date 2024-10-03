@@ -54,11 +54,8 @@ public class Main {
 
         // 6. Test EmployeeService: Update employee details
         Employee existingEmployee = employeeService.getEmployeeById(1);
-        existingEmployee.setPhone("1111111111");
-        existingEmployee.setDepartement(hrDepartement);
-        employeeService.updateEmployee(existingEmployee);
-        System.out.println("Updated Employee Phone: " + existingEmployee.getPhone());
-
+        employeeService.removeEmployee(existingEmployee.getId());
+        System.out.println("Deleted Employee with ID: " + existingEmployee.getId());
 
     }
 }
