@@ -33,17 +33,32 @@ public class Main {
             System.out.println("Departement ID: " + d.getId() + ", Name: " + d.getName());
         }
 
-        Departement hrDepartement = departementService.getDepartementById(1);
+        Departement hrDepartement = departementService.getDepartementById(2);
 
 
         Employee newEmployee1 = new Employee("Alice Johnsons", "alice@exasmple.com", "55515234", "HR Specialsist",hrDepartement);
-        employeeService.addEmployee(newEmployee1);
+//        employeeService.addEmployee(newEmployee1);
+
+//
+//        List<Employee> employees = employeeService.getAllEmployees();
+//        System.out.println("All Employees:");
+//        for (Employee e : employees) {
+//            System.out.println("Employee ID: " + e.getId() + ", Name: " + e.getName() + ", Department: " + e.getDepartement().getName());
+//        }
+
+        // 5. Test DepartementService: Update department name
+//        hrDepartement.setName("HR Department");
+//        departementService.updateDepartement(hrDepartement);
+//        System.out.println("Updated Departement Name: " + hrDepartement.getName());
 
 
-        List<Employee> employees = employeeService.getAllEmployees();
-        System.out.println("All Employees:");
-        for (Employee e : employees) {
-            System.out.println("Employee ID: " + e.getId() + ", Name: " + e.getName() + ", Department: " + e.getDepartement().getName());
-        }
+        // 6. Test EmployeeService: Update employee details
+        Employee existingEmployee = employeeService.getEmployeeById(1);
+        existingEmployee.setPhone("1111111111");
+        existingEmployee.setDepartement(hrDepartement);
+        employeeService.updateEmployee(existingEmployee);
+        System.out.println("Updated Employee Phone: " + existingEmployee.getPhone());
+
+
     }
 }
