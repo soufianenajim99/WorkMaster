@@ -4,18 +4,14 @@
         "https://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <!-- Mapping for the Departement class -->
     <class name="Models.Departement" table="departements">
 
-        <!-- Primary key mapping -->
         <id name="id" column="id" type="int">
             <generator class="identity"/>
         </id>
 
-        <!-- Property mapping for name -->
         <property name="name" column="name" type="string"/>
 
-        <!-- One-to-Many relationship mapping with Employee class -->
         <set name="employees" cascade="all" inverse="true">
             <key column="departement_id"/>
             <one-to-many class="Models.Employee"/>
