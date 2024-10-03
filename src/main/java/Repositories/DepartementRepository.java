@@ -26,7 +26,7 @@ public class DepartementRepository implements DepartementRepositoryInterface {
     }
 
     @Override
-    public Departement findById(Long id) {
+    public Departement findById(int id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Departement departement = session.get(Departement.class, id);
             // Initializing the employees collection (avoiding lazy loading issues)

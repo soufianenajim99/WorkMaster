@@ -25,7 +25,7 @@ public class EmployeeRepository implements EmployeeRepositoryInterface {
     }
 
     @Override
-    public Employee findById(Long id) {
+    public Employee findById(int id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Employee employee = session.get(Employee.class, id);
             // Initialize the department association
@@ -39,7 +39,7 @@ public class EmployeeRepository implements EmployeeRepositoryInterface {
     @Override
     public List<Employee> findAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from Employee", Employee.class).list();
+            return session.createQuery("select e from Employee e join fetch e.departement").list();
         }
     }
 

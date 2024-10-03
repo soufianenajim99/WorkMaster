@@ -6,12 +6,12 @@
 <hibernate-mapping>
     <class name="Models.Employee" table="employees">
         <id name="id" column="id" type="int">
-            <generator class="native" />
+            <generator class="identity"/>
         </id>
         <property name="name" column="name" type="string" not-null="true"/>
         <property name="email" column="email" type="string" not-null="true"/>
         <property name="phone" column="phone" type="string"/>
         <property name="post" column="post" type="string"/>
-        <many-to-one name="departement" class="Models.Departement" column="departement_id" not-null="true"/>
+        <many-to-one name="departement" class="Models.Departement" column="departement_id" fetch="join"   not-null="true"/>
     </class>
 </hibernate-mapping>

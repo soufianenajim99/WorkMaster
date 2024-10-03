@@ -20,6 +20,14 @@ public class Employee {
         this.departement = departement;
     }
 
+    public Employee(String name, String email, String phone, String post, Departement departement) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.post = post;
+        this.departement = departement;
+    }
+
     public int getId() {
         return id;
     }

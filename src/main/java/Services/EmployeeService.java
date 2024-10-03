@@ -19,7 +19,7 @@ public class EmployeeService implements EmployeeServiceInterface {
     }
 
     @Override
-    public Employee getEmployeeById(Long id) {
+    public Employee getEmployeeById(int id) {
         return employeeRepository.findById(id);
     }
 

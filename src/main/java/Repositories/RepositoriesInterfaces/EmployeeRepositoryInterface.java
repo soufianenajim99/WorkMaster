@@ -5,7 +5,7 @@ import Models.Employee;
 import java.util.List;
 public interface EmployeeRepositoryInterface {
     void save(Employee employee);
-    Employee findById(Long id);
+    Employee findById(int id);
     List<Employee> findAll();
     void update(Employee employee);
     void delete(int id);
