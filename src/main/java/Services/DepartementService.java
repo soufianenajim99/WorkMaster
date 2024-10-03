@@ -19,7 +19,7 @@ public class DepartementService implements DepartementServiceInterface {
     }
 
     @Override
-    public Departement getDepartementById(Long id) {
+    public Departement getDepartementById(int id) {
         return departementRepository.findById(id);
     }
 
