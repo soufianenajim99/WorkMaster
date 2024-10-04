@@ -13,9 +13,9 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 
 </head>
-<body>
-<h2>Create New Employees</h2>
-<form action="employee?action=create" method="post">
+<body class="create-page">
+<h2>Create New Employee</h2>
+<form class="create-form" action="employee?action=create" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required><br>
 
@@ -31,7 +31,7 @@
     <label for="department_id">Department ID:</label>
     <input type="number" id="department_id" name="department_id" required><br>
 
-    <input type="submit" value="Create Employee">
+    <input type="submit" value="Create Employee" class="submit-btn">
 </form>
 </body>
 </html>

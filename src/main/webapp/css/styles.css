@@ -92,3 +92,42 @@ a.create-btn {
 a.create-btn:hover {
     background-color: #003366;
 }
+/* Styles specific to the Create Employee page */
+.create-page {
+    background-color: #e6f7ff;
+}
+
+.create-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.create-form input[type="text"],
+.create-form input[type="email"],
+.create-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-form input[type="submit"],
+.create-form .submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.create-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
