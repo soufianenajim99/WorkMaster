@@ -9,11 +9,13 @@
 <html>
 <head>
     <title>Title</title>
-</head>
-<body>
-<h1>Edit Employee</h1>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 
-<form action="employee?action=update" method="post">
+</head>
+<body class="create-page">
+<h2>Edit Employee</h2>
+
+<form class="create-form" action="employee?action=update" method="post">
     <!-- Hidden field to pass employee ID -->
     <input type="hidden" name="id" value="${employee.id}">
 
@@ -40,6 +42,6 @@
     <input type="submit" value="Update Employee">
 </form>
 
-<a href="/employee">Back to Employees List</a>
+<a class="create-btn" href="${pageContext.request.contextPath}/employee">Back to Employees List</a>
 </body>
 </html>
