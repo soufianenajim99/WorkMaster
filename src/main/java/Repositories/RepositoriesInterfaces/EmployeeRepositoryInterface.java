@@ -9,4 +9,5 @@ public interface EmployeeRepositoryInterface {
     List<Employee> findAll();
     void update(Employee employee);
     void delete(int id);
+    List<Employee> searchEmployees(String keyword);
 }

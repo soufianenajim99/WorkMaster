@@ -4,6 +4,7 @@ import Repositories.RepositoriesInterfaces.EmployeeRepositoryInterface;
 import Utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 public class EmployeeRepository implements EmployeeRepositoryInterface {
@@ -74,5 +75,25 @@ public class EmployeeRepository implements EmployeeRepositoryInterface {
             }
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Employee> searchEmployees(String keyword) {
+        List<Employee> employees = null;
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            String hql = "FROM Employee e WHERE e.name LIKE :keyword OR e.email LIKE :keyword OR e.post LIKE :keyword";
+            Query<Employee> query = session.createQuery(hql, Employee.class);
+            query.setParameter("keyword", "%" + keyword + "%");
+            employees = query.list();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return employees;
     }
 }
