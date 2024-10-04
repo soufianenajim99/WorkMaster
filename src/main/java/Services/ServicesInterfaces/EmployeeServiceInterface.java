@@ -9,4 +9,5 @@ public interface EmployeeServiceInterface {
     List<Employee> getAllEmployees();
     void updateEmployee(Employee employee);
     void removeEmployee(int id);
+    List<Employee> getEmployees(String keywoord);
 }

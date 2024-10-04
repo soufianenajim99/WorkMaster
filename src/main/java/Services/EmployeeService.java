@@ -37,4 +37,9 @@ public class EmployeeService implements EmployeeServiceInterface {
     public void removeEmployee(int id) {
         employeeRepository.delete(id);
     }
+
+    @Override
+    public List<Employee> getEmployees(String keywoord){
+        return employeeRepository.searchEmployees(keywoord);
+    }
 }
