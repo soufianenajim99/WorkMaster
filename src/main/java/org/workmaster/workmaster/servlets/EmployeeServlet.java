@@ -67,12 +67,10 @@ public class EmployeeServlet extends HttpServlet {
 
             case "search":
                 // Search employees based on a keyword (name, email, or post)
-//                String searchTerm = request.getParameter("keyword");
-//                List<Employee> filteredEmployees = employeeService.getEmployees(searchTerm);
-                List<Employee> employeees = employeeService.getAllEmployees();
+                String searchTerm = request.getParameter("keyword");
+                List<Employee> filteredEmployees = employeeService.getEmployees(searchTerm);
 
-//                 Set filtered list in the request
-                request.setAttribute("employees", employeees);
+                request.setAttribute("employees", filteredEmployees);
                 request.getRequestDispatcher("/views/employees.jsp").forward(request, response);
                 break;
 

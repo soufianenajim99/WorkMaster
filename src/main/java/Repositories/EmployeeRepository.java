@@ -83,10 +83,15 @@ public class EmployeeRepository implements EmployeeRepositoryInterface {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String hql = "FROM Employee e WHERE e.name LIKE :keyword OR e.email LIKE :keyword OR e.post LIKE :keyword";
+
+            // Eagerly load the 'departement' with join fetch
+            String hql = "select e from Employee e join fetch e.departement " +
+                    "WHERE e.name LIKE :keyword OR e.email LIKE :keyword OR e.post LIKE :keyword";
+
             Query<Employee> query = session.createQuery(hql, Employee.class);
             query.setParameter("keyword", "%" + keyword + "%");
             employees = query.list();
+
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -96,4 +101,6 @@ public class EmployeeRepository implements EmployeeRepositoryInterface {
         }
         return employees;
     }
+
+
 }

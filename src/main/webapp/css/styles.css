@@ -1,0 +1,94 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #004d99;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #004d99;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #004d99;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Links for Actions */
+a {
+    color: #004d99;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #004d99;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+a:hover {
+    background-color: #004d99;
+    color: white;
+}
+
+/* Create Employee Button */
+a.create-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #004d99;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a.create-btn:hover {
+    background-color: #003366;
+}
